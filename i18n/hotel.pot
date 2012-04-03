@@ -1,0 +1,309 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-04-03 14:47+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: bills.php:7 bills.php:7
+msgid "Bills management"
+msgstr ""
+
+#: bills.php:12 bills.php:38 checkout.php:168 bills.php:12 bills.php:38
+#: checkout.php:168
+msgid "Check Out"
+msgstr ""
+
+#: bills.php:13 bills.php:13
+msgid "from dd/mm/yyyy"
+msgstr ""
+
+#: bills.php:14 bills.php:14
+msgid "to dd/mm/yyyy"
+msgstr ""
+
+#: bills.php:16 bills.php:39 rates.php:71 checkin.php:34 checkout.php:125
+#: checkout.php:139 checkout.php:170 rooms.php:14 rooms.php:36 rooms.php:46
+#: rooms.php:76 wakeup.php:75 wakeup.php:95 bills.php:16 bills.php:39
+#: rates.php:71 checkin.php:34 checkout.php:125 checkout.php:139
+#: checkout.php:170 rooms.php:14 rooms.php:36 rooms.php:46 rooms.php:76
+#: wakeup.php:75 wakeup.php:95
+msgid "Database connection failed"
+msgstr ""
+
+#: bills.php:17 rooms.php:77 wakeup.php:76 bills.php:17 rooms.php:77
+#: wakeup.php:76
+msgid "Database Hotel-Rooms open failed"
+msgstr ""
+
+#: bills.php:20 wakeup.php:79 bills.php:20 wakeup.php:79
+msgid "Couldn't execute SQL query on Hotel-Users table."
+msgstr ""
+
+#: bills.php:23 bills.php:23
+msgid "All"
+msgstr ""
+
+#: bills.php:29 bills.php:29
+msgid "Search"
+msgstr ""
+
+#: bills.php:38 rates.php:69 checkin.php:32 checkout.php:168 rooms.php:74
+#: wakeup.php:93 bills.php:38 rates.php:69 checkin.php:32 checkout.php:168
+#: rooms.php:74 wakeup.php:93
+msgid "Id"
+msgstr ""
+
+#: bills.php:38 checkin.php:32 checkout.php:168 rooms.php:74 wakeup.php:74
+#: wakeup.php:93 bills.php:38 checkin.php:32 checkout.php:168 rooms.php:74
+#: wakeup.php:74 wakeup.php:93
+msgid "Room"
+msgstr ""
+
+#: bills.php:38 checkin.php:32 checkout.php:168 wakeup.php:93 bills.php:38
+#: checkin.php:32 checkout.php:168 wakeup.php:93
+msgid "Name"
+msgstr ""
+
+#: bills.php:38 checkin.php:32 header.php:17 bills.php:38 checkin.php:32
+#: header.php:32
+msgid "Check In"
+msgstr ""
+
+#: bills.php:38 bills.php:38
+msgid "Total"
+msgstr ""
+
+#: bills.php:38 rooms.php:74 bills.php:38 rooms.php:74
+msgid "Action"
+msgstr ""
+
+#: bills.php:40 rates.php:72 checkin.php:35 checkout.php:75 checkout.php:171
+#: bills.php:40 rates.php:72 checkin.php:35 checkout.php:75 checkout.php:171
+msgid "Database Hotel-Rates open failed"
+msgstr ""
+
+#: bills.php:89 rates.php:75 checkin.php:38 checkout.php:77 checkout.php:174
+#: rooms.php:51 rooms.php:80 wakeup.php:99 bills.php:89 rates.php:75
+#: checkin.php:38 checkout.php:77 checkout.php:174 rooms.php:51 rooms.php:80
+#: wakeup.php:99
+msgid "Web site query failed"
+msgstr ""
+
+#: bills.php:92 bills.php:92
+msgid "Report"
+msgstr ""
+
+#: rates.php:7 rates.php:7
+msgid "Rates management"
+msgstr ""
+
+#: rates.php:19 rates.php:57 checkin.php:12 checkout.php:74 checkout.php:92
+#: checkout.php:156 rooms.php:56 rates.php:19 rates.php:57 checkin.php:12
+#: checkout.php:74 checkout.php:92 checkout.php:156 rooms.php:56
+msgid "Database Hotel connection failed"
+msgstr ""
+
+#: rates.php:20 rates.php:58 rooms.php:15 rates.php:20 rates.php:58
+#: rooms.php:15
+msgid "Database open failed"
+msgstr ""
+
+#: rates.php:23 rates.php:23
+msgid "Database Hotel deletion failed"
+msgstr ""
+
+#: rates.php:61 rates.php:61
+msgid "Database Hotel-Rates insert failed"
+msgstr ""
+
+#: rates.php:69 rates.php:69
+msgid "Description"
+msgstr ""
+
+#: rates.php:69 rates.php:69
+msgid "Type"
+msgstr ""
+
+#: rates.php:69 rates.php:69
+msgid "Prefix"
+msgstr ""
+
+#: rates.php:69 rates.php:69
+msgid "Minute rate"
+msgstr ""
+
+#: rates.php:69 rates.php:69
+msgid "Fixed rate"
+msgstr ""
+
+#: rates.php:77 rooms.php:82 wakeup.php:93 rates.php:77 rooms.php:82
+#: wakeup.php:93
+msgid "Delete"
+msgstr ""
+
+#: rates.php:80 rooms.php:70 wakeup.php:87 rates.php:80 rooms.php:70
+#: wakeup.php:87
+msgid "Insert"
+msgstr ""
+
+#: checkin.php:6 checkin.php:6
+msgid "Check-in management"
+msgstr ""
+
+#: checkin.php:21 wakeup.php:96 checkin.php:21 wakeup.php:96
+msgid "Database Hotel-Users open failed"
+msgstr ""
+
+#: checkin.php:24 checkin.php:24
+msgid "Database Hotel-Users insert failed"
+msgstr ""
+
+#: checkin.php:32 checkout.php:168 rooms.php:74 wakeup.php:93 checkin.php:32
+#: checkout.php:168 rooms.php:74 wakeup.php:93
+msgid "Ext"
+msgstr ""
+
+#: checkin.php:47 checkout.php:183 checkin.php:47 checkout.php:183
+msgid "Save"
+msgstr ""
+
+#: index.php:8 index.php:8
+msgid "Welcome to PIAF Hotel Management system"
+msgstr ""
+
+#: header.php:5 header.php:20
+msgid "PIAF Hospitality Management System"
+msgstr ""
+
+#: header.php:11 header.php:26
+msgid "PIAF H.M.S."
+msgstr ""
+
+#: header.php:14 header.php:29
+msgid "Home"
+msgstr ""
+
+#: header.php:15 bills.php:15 header.php:30
+msgid "Rooms"
+msgstr ""
+
+#: header.php:16 header.php:31
+msgid "Rates"
+msgstr ""
+
+#: header.php:18 header.php:33
+msgid "Check out"
+msgstr ""
+
+#: header.php:19 header.php:34
+msgid "Bills"
+msgstr ""
+
+#: header.php:20 header.php:35
+msgid "Wake Up"
+msgstr ""
+
+#: checkout.php:7 checkout.php:7
+msgid "Check-out management"
+msgstr ""
+
+#: checkout.php:97 checkout.php:100 checkout.php:157 checkout.php:160
+#: checkout.php:97 checkout.php:100 checkout.php:157 checkout.php:160
+msgid "Database Hotel-Users update failed"
+msgstr ""
+
+#: checkout.php:106 checkout.php:106
+msgid "Database Hotel-Users select failed"
+msgstr ""
+
+#: checkout.php:126 rooms.php:47 checkout.php:126 rooms.php:47
+msgid "Database asterisk open failed"
+msgstr ""
+
+#: checkout.php:128 checkout.php:128
+msgid "Web site query load extensions failed"
+msgstr ""
+
+#: checkout.php:140 checkout.php:140
+msgid "Database asteriskcdrdb open failed"
+msgstr ""
+
+#: checkout.php:142 checkout.php:142
+msgid "Web site query load cdr failed"
+msgstr ""
+
+#: rooms.php:5 rooms.php:5
+msgid "Rooms management"
+msgstr ""
+
+#: rooms.php:18 rooms.php:18
+msgid "Database deletion failed"
+msgstr ""
+
+#: rooms.php:34 rooms.php:34
+msgid "Extensions imported from FreePBX"
+msgstr ""
+
+#: rooms.php:37 rooms.php:58 rooms.php:37 rooms.php:58
+msgid "Database Hotel open failed"
+msgstr ""
+
+#: rooms.php:40 rooms.php:40
+msgid "Database Hotel-Rooms deletion failed"
+msgstr ""
+
+#: rooms.php:61 rooms.php:61
+msgid "Database Hotel-Rooms insert failed"
+msgstr ""
+
+#: rooms.php:70 rooms.php:70
+msgid "Import from FreePBX"
+msgstr ""
+
+#: rooms.php:74 rooms.php:74
+msgid "Insert date"
+msgstr ""
+
+#: wakeup.php:71 wakeup.php:71
+msgid "Wakeup service management"
+msgstr ""
+
+#: wakeup.php:74 wakeup.php:74
+msgid "Insert new wake-up"
+msgstr ""
+
+#: wakeup.php:93 wakeup.php:93
+msgid "Hour"
+msgstr ""
+
+#: ec.php:6 ec.php:6
+msgid "Room bill"
+msgstr ""
+
+#: ec.php:62 ec.php:62
+msgid "Call date"
+msgstr ""
+
+#: ec.php:62 ec.php:62
+msgid "Destination"
+msgstr ""
+
+#: ec.php:62 ec.php:62
+msgid "Secs"
+msgstr ""
+
+#: ec.php:62 ec.php:62
+msgid "Amount"
+msgstr ""
