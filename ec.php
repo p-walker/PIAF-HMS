@@ -3,11 +3,11 @@ include('config.inc.php');
 include('header.php');
 
 
-echo "<h1>".$Title8."</h1>" ;
+echo "<h1>". _("Room bill") ."</h1>" ;
 
 	//Load Rates data from database
  	$dbconnection = mysql_connect($dbhost, $dbuser, $dbpass) or die("Database Hotel connection failed");
-	mysql_select_db($dbname) or die("data base Hotel-Rates open failed");
+	mysql_select_db($dbname) or die("Database Hotel-Rates open failed");
 	$query = "SELECT Pref, Min, Risp FROM `Rates`";
 	$result = mysql_query($query) or die("Web site query failed");
 	$data=array();
@@ -22,7 +22,7 @@ echo "<h1>".$Title8."</h1>" ;
 
 	//Load Local extensions in array
  	$dbconnection4 = mysql_connect($dbhost2, $dbuser2, $dbpass2) or die("Database connection failed");
-	mysql_select_db($dbname2) or die("data base asterisk open failed");
+	mysql_select_db($dbname2) or die("Database asterisk open failed");
 	$query = "SELECT extension FROM `users`";
 	$result = mysql_query($query) or die("Web site query load extensions failed");
 	mysql_close($dbconnection4);
@@ -52,14 +52,14 @@ echo "<h1>".$Title8."</h1>" ;
 	//Load Asteriskcdrdb data from database
  	$dbconnection3 = mysql_connect($dbhost3, $dbuser3, $dbpass3)
     		or die("Database connection failed");
-	mysql_select_db($dbname3) or die("data base asteriskcdrdb open failed");
+	mysql_select_db($dbname3) or die("Database asteriskcdrdb open failed");
 
 	$query = "SELECT calldate, dst, billsec FROM `cdr` WHERE dstchannel IS NOT NULL AND dcontext = 'from-internal' AND (lastapp = 'Dial' OR lastapp = 'ResetCDR') AND calldate BETWEEN '" . $_GET['Checkin'] . "' AND '" . $_GET['Checkout'] ."' AND channel LIKE '%/" . $_GET['Ext'] ."-%'";
 	$result = mysql_query($query)
     		or die("Web site query failed");
 	mysql_close($dbconnection3);
 	echo "<TABLE cellSpacing=0 cellPadding=0 width=900 border=0>\n" ;
-	echo "<TR><TD>".$SecLab25."</TD><TD>".$SecLab26."</TD><TD>".$SecLab27."</TD><TD>".$SecLab28."</TD>\n" ;
+	echo "<TR><TD>". _("Call date") ."</TD><TD>". _("Destination") ."</TD><TD>". _("Secs") ."</TD><TD>". _("Amount") ."</TD>\n" ;
 	while ($row = mysql_fetch_array($result)) {
 		If (in_array($row["dst"], $extensions)) {
 			// Do nothing is a local extension

@@ -68,15 +68,15 @@ endif;
    	}
 
 
-echo "<h1>".$Title7."</h1>" ;
+echo "<h1>". _("Wakeup service management") ."</h1>" ;
 echo "<FORM NAME=\"InsertFORM\" ACTION=\"./wakeup.php\" METHOD=POST>\n";
 echo "<CENTER><TABLE cellSpacing=0 cellPadding=0 width=500 border=0>\n" ;
-echo "<TR><TD align=\"center\">".$SecLab30."</TD><TD>".$SecLab7." ";
- 	$dbconnection = mysql_connect($dbhost, $dbuser, $dbpass) or die("Database connection failed");
-	mysql_select_db($dbname) or die("data base Hotel-Rooms open failed");
+echo "<TR><TD align=\"center\">". _("Insert new wake-up") ."</TD><TD>". _("Room") ." ";
+ 	$dbconnection = mysql_connect($dbhost, $dbuser, $dbpass) or die(_("Database connection failed"));
+	mysql_select_db($dbname) or die(_("Database Hotel-Rooms open failed"));
 
   	$query = "SELECT `Desc`, `Ext` FROM `Users` WHERE Checkout IS NULL ORDER BY `Room` ASC" ;
- 	$result = mysql_query($query) or die ("Couldn't execute SQL query on Hotel-Users table.") ;
+ 	$result = mysql_query($query) or die (_("Couldn't execute SQL query on Hotel-Users table."));
 	mysql_close($dbconnection);
   	echo " <SELECT ID=\"RoomsComboBox\" NAME=\"RoomsComboBox\">";
   	while ($row = mysql_fetch_array($result))  {
@@ -84,19 +84,19 @@ echo "<TR><TD align=\"center\">".$SecLab30."</TD><TD>".$SecLab7." ";
   	}
   	echo "</SELECT>";
 echo "</TD><TD>HH:MM <INPUT TYPE=\"TEXTBOX\" NAME=\"HH\" SIZE=\"2\" MAXLENGHT=\"2\"/>:<INPUT TYPE=\"TEXTBOX\" NAME=\"MM\" SIZE=\"2\" MAXLENGHT=\"2\"/></TD>";
-echo "<TD><INPUT TYPE=\"SUBMIT\" NAME=\"INSERT\" VALUE=\"INSERT\"></TD></TR>";
+echo "<TD><INPUT TYPE=\"SUBMIT\" NAME=\"INSERT\" VALUE=\"" . _("Insert") . "\"></TD></TR>";
 echo "</TABLE></CENTER><BR />";
 echo "</FORM>\n";
 
 echo "<FORM NAME=\"UpdateFORM\" ACTION=\"./wakeup.php\" METHOD=POST>\n";
 echo "<TABLE cellSpacing=0 cellPadding=0 width=900 border=0 >\n" ;
-echo "<TR><TD>Id</TD><TD>".$SecLab24."</TD><TD>".$SecLab7."</TD><TD>".$SecLab6."</TD><TD>".$SecLab14."</TD><TD>".$SecLab3."</TD></TR>\n" ;
+echo "<TR><TD>" . _("Id") . "</TD><TD>". _("Hour") ."</TD><TD>". _("Room") ."</TD><TD>". _("Ext") ."</TD><TD>". _("Name") ."</TD><TD>". _("Delete") ."</TD></TR>\n" ;
  	$dbconnection = mysql_connect($dbhost, $dbuser, $dbpass)
-    		or die("Database connection failed");
-	mysql_select_db($dbname) or die("data base Hotel-Users open failed");
+    		or die(_("Database connection failed"));
+	mysql_select_db($dbname) or die(_("Database Hotel-Users open failed"));
 	$query = "SELECT * FROM Users WHERE Checkout IS NULL ORDER BY ID ASC";
 	$result = mysql_query($query)
-    	or die("Web site query failed");
+    	or die(_("Web site query failed"));
 
 	$count = 0;
 	while ($row = mysql_fetch_array($result)) {

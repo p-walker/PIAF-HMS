@@ -4,7 +4,7 @@ include('config.inc.php');
 include('header.php');
 
 
-echo "<h1>".$Title5."</h1>\n" ;
+echo "<h1>". _("Check-out management") ."</h1>\n" ;
 
 if(isset($_POST['SaveButton'])) :
    // process as form post
@@ -71,10 +71,10 @@ if(isset($_POST['SaveButton'])) :
 
 
 	//Load Rates data from database
- 	$dbconnection = mysql_connect($dbhost, $dbuser, $dbpass) or die("Database Hotel connection failed");
-	mysql_select_db($dbname) or die("data base Hotel-Rates open failed");
+ 	$dbconnection = mysql_connect($dbhost, $dbuser, $dbpass) or die(_("Database Hotel connection failed"));
+	mysql_select_db($dbname) or die(_("Database Hotel-Rates open failed"));
 	$query = "SELECT Pref, Min, Risp FROM `Rates`";
-	$result = mysql_query($query) or die("Web site query failed");
+	$result = mysql_query($query) or die(_("Web site query failed"));
 	$data=array();
 	mysql_close($dbconnection);
 	if( mysql_num_rows($result) > 0 )
@@ -89,21 +89,21 @@ if(isset($_POST['SaveButton'])) :
 		for ($i=1; $i<=$_POST['num_rows']; $i++) {
 				//UPdate checkout date
 			 	$dbconnection = mysql_connect($dbhost, $dbuser, $dbpass)
-    					or die("Database Hotel connection failed");
+    					or die(_("Database Hotel connection failed"));
 				if (isset($_POST["cb". $i])) {
 
 				$Room = $_POST["ID". $i] ;
 
-				mysql_select_db($dbname) or die("data base Hotel-Users update failed");
+				mysql_select_db($dbname) or die(_("Database Hotel-Users update failed"));
   				$query = "UPDATE `Users` SET Checkout = NOW() WHERE ID = ".$Room;
   				$result = mysql_query($query)
-   					or die("Database Hotel-Users update failed");
+   					or die(_("Database Hotel-Users update failed"));
 				//mysql_close($dbconnection);
 
 				//load user data for loop
-				//mysql_select_db($dbname) or die("data base Hotel-Users select failed");
+				//mysql_select_db($dbname) or die(_("Database Hotel-Users select failed"));
   				$query = "SELECT * FROM Users WHERE `ID` = ".$Room;
-  				$result = mysql_query($query) or die("Database Hotel-Users select failed");
+  				$result = mysql_query($query) or die(_("Database Hotel-Users select failed"));
 				mysql_close($dbconnection);
 				$row = mysql_fetch_array($result);
 
@@ -122,10 +122,10 @@ if(isset($_POST['SaveButton'])) :
 				DeleteWU($Ext);
 
 				//Load Local extensions in array
- 				$dbconnection4 = mysql_connect($dbhost2, $dbuser2, $dbpass2) or die("Database connection failed");
-				mysql_select_db($dbname2) or die("data base asterisk open failed");
+ 				$dbconnection4 = mysql_connect($dbhost2, $dbuser2, $dbpass2) or die(_("Database connection failed"));
+				mysql_select_db($dbname2) or die(_("Database asterisk open failed"));
 				$query = "SELECT extension FROM `users`";
-				$result = mysql_query($query) or die("Web site query load extensions failed");
+				$result = mysql_query($query) or die(_("Web site query load extensions failed"));
 				mysql_close($dbconnection4);
 				if( mysql_num_rows($result) > 0 )	{
   					while($row = mysql_fetch_array($result))
@@ -136,10 +136,10 @@ if(isset($_POST['SaveButton'])) :
 
 
 				//Load Asteriskcdrdb data from database
- 				$dbconnection3 = mysql_connect($dbhost3, $dbuser3, $dbpass3) or die("Database connection failed");
-				mysql_select_db($dbname3) or die("data base asteriskcdrdb open failed");
+ 				$dbconnection3 = mysql_connect($dbhost3, $dbuser3, $dbpass3) or die(_("Database connection failed"));
+				mysql_select_db($dbname3) or die(_("Database asteriskcdrdb open failed"));
 				$query = "SELECT calldate, dst, billsec FROM `cdr` WHERE dstchannel IS NOT NULL AND (lastapp = 'Dial' OR lastapp = 'ResetCDR') AND dcontext = 'from-internal' AND calldate BETWEEN '" . $Checkin . "' AND '" . $Checkout ."' AND channel LIKE '%/" . $Ext ."-%'";
-				$result = mysql_query($query) or die("Web site query load cdr failed");
+				$result = mysql_query($query) or die(_("Web site query load cdr failed"));
 				mysql_close($dbconnection3);
 
 				//Calculate total looping cdr database
@@ -153,11 +153,11 @@ if(isset($_POST['SaveButton'])) :
 						}
 				}
 				// Update user data with total
-			 	$dbconnection = mysql_connect($dbhost, $dbuser, $dbpass) or die("Database Hotel connection failed");
-				mysql_select_db($dbname) or die("data base Hotel-Users update failed");
+			 	$dbconnection = mysql_connect($dbhost, $dbuser, $dbpass) or die(_("Database Hotel connection failed"));
+				mysql_select_db($dbname) or die(_("Database Hotel-Users update failed"));
   				$query = "UPDATE `Users` SET Total = '". $total. "' WHERE ID = ".$Room;
   				$result = mysql_query($query)
-   					or die("Database Hotel-Users update failed");
+   					or die(_("Database Hotel-Users update failed"));
 				mysql_close($dbconnection);				}
 		}
 endif;
@@ -165,13 +165,13 @@ endif;
 echo "<FORM NAME=\"UpdateFORM\" ACTION=\"./checkout.php\" METHOD=POST>\n";
 
 echo "<TABLE cellSpacing=0  cellPadding=0 width=900 border=0>\n" ;
-echo "<TR><TD>Id</TD><TD>".$SecLab7."</TD><TD>".$SecLab6."</TD><TD>".$SecLab14."</TD><TD>".$SecLab17."</TD></TR>\n" ;
+echo "<TR><TD>" . _("Id") . "</TD><TD>". _("Room") ."</TD><TD>". _("Ext") ."</TD><TD>". _("Name") ."</TD><TD>". _("Check Out") ."</TD></TR>\n" ;
  	$dbconnection = mysql_connect($dbhost, $dbuser, $dbpass)
-    		or die("Database connection failed");
-	mysql_select_db($dbname) or die("data base Hotel-Rates open failed");
+    		or die(_("Database connection failed"));
+	mysql_select_db($dbname) or die(_("Database Hotel-Rates open failed"));
 	$query = "SELECT * FROM Users WHERE Checkout IS NULL ORDER BY ID ASC";
 	$result = mysql_query($query)
-    	or die("Web site query failed");
+    	or die(_("Web site query failed"));
 
 	$count = 0;
 	while ($row = mysql_fetch_array($result)) {
@@ -180,7 +180,7 @@ echo "<TR><TD>Id</TD><TD>".$SecLab7."</TD><TD>".$SecLab6."</TD><TD>".$SecLab14."
 	}
 echo "</TABLE>\n";
 echo "<INPUT TYPE=\"HIDDEN\" NAME=\"num_rows\" VALUE=\"" .$count. "\">\n" ;
-echo "<BR><BR><INPUT TYPE=SUBMIT NAME=\"SaveButton\" VALUE=\"".$SecLab16."\" ID=\"Save\">\n" ;
+echo "<BR><BR><INPUT TYPE=SUBMIT NAME=\"SaveButton\" VALUE=\"". _("Save") ."\" ID=\"Save\">\n" ;
 echo "</FORM>\n";
 
 

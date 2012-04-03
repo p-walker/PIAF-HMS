@@ -5,7 +5,7 @@ include('header.php');
 ?>
 
 <h1>
-<?php  echo $Title1 ?>
+<?php  echo _("Welcome to PIAF Hotel Management system") ?>
 </h1>
 
 
